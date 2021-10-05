@@ -25,7 +25,7 @@ function replacedPseudoSelectors(
   styleSheetsList?: StyleSheetList
 ): Array<string> {
   const rulesProcessed = [];
-  if (!styleSheetsList) return;
+  if (!styleSheetsList) return [];
   for (let i = 0; i < styleSheetsList.length; i++) {
     const currentStyleSheet = styleSheetsList.item(i);
 
