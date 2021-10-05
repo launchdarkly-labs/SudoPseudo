@@ -1,17 +1,19 @@
 {
-  "name": "storybook-addon-kit",
-  "version": "0.0.0",
+  "name": "sudo-pseudo",
+  "version": "0.1.0",
   "description": "everything you need to build a Storybook addon",
   "keywords": [
+    "css",
+    "pseudo states",
     "storybook-addons",
     "style",
     "test"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookjs/storybook-addon-kit"
+    "url": "https://github.com/jagarnica/SudoPseudo"
   },
-  "author": "winkerVSbecks",
+  "author": "jagarnica",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
