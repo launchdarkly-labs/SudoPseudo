@@ -21,7 +21,7 @@ type cssRule = {
 
 // Returns an array of css rules that match the pseudo states and
 // have their pseudo selectors replaced with class names
-function replacedPseudoSelectors(
+function replacePseudoSelectors(
   styleSheetsList?: StyleSheetList
 ): Array<string> {
   const rulesProcessed = [];
@@ -64,7 +64,7 @@ export function withPseudoTransformer(
 
   const getModifiedStyles = useMemo(() => {
     const stylesSheets = document.styleSheets;
-    return replacedPseudoSelectors(stylesSheets);
+    return replacePseudoSelectors(stylesSheets);
   }, [context.id]);
 
   useEffect(() => {
