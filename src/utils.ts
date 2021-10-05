@@ -89,9 +89,7 @@ export function useHasHuber() {
     const huberElemFound = !!document
       .getElementsByTagName("style")
       .namedItem(ADDON_STYLES_SELECTOR);
-    console.log(
-      !!document.getElementsByTagName("style").namedItem(ADDON_STYLES_SELECTOR)
-    );
+
     if (hasHuber !== huberElemFound) {
       setHasHuber(huberElemFound);
     }
