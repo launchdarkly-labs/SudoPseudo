@@ -9,7 +9,20 @@
 }
 .storybook-button--primary {
   color: white;
+
   background-color: #1ea7fd;
+}
+.storybook-button--primary:focus {
+  outline: 1px solid red;
+}
+.storybook-button--primary:focus:not(:focus-visible) {
+  outline: transparent;
+}
+.storybook-button--primary:focus-visible {
+  outline: 1px solid red;
+}
+.storybook-button--primary:hover {
+  background-color: #014e7f;
 }
 .storybook-button--secondary {
   color: #333;

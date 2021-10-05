@@ -20,7 +20,24 @@ Primary.args = {
   primary: true,
   label: "Button",
 };
-
+export const PrimaryFocused = Template.bind({});
+PrimaryFocused.args = {
+  primary: true,
+  label: "Button",
+  className: "pseudo-focus ",
+};
+export const PrimaryFocusVisible = Template.bind({});
+PrimaryFocusVisible.args = {
+  primary: true,
+  label: "Button",
+  className: "pseudo-focus-visible",
+};
+export const PrimaryHovered = Template.bind({});
+PrimaryHovered.args = {
+  primary: true,
+  label: "Button",
+  className: "pseudo-hover",
+};
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: "Button",

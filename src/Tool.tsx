@@ -1,31 +1,31 @@
 import React, { useCallback } from "react";
 import { useGlobals } from "@storybook/api";
-import { Icons, IconButton } from "@storybook/components";
-import { TOOL_ID } from "./constants";
-
+import { IconButton } from "@storybook/components";
+import { TOOL_ID, GLOBAL_PARAM_KEY } from "./constants";
+import { SudoIcon } from "./icons/";
 export const Tool = () => {
-  const [{ myAddon }, updateGlobals] = useGlobals();
+  const [globals, updateGlobals] = useGlobals();
 
-  const toggleMyTool = useCallback(
-    () =>
-      updateGlobals({
-        myAddon: myAddon ? undefined : true,
-      }),
-    [myAddon]
-  );
+  const isAddonEnabled = !!globals[GLOBAL_PARAM_KEY];
+
+  const toggleSudoPseudo = useCallback(() => {
+    updateGlobals({
+      [GLOBAL_PARAM_KEY]: isAddonEnabled ? undefined : true,
+    });
+  }, [isAddonEnabled]);
 
   return (
     <IconButton
       key={TOOL_ID}
-      active={myAddon}
-      title="Enable my addon"
-      onClick={toggleMyTool}
+      active={isAddonEnabled}
+      title="Display pseudo styles"
+      onClick={toggleSudoPseudo}
     >
-      {/*
-        Checkout https://next--storybookjs.netlify.app/official-storybook/?path=/story/basics-icon--labels
-        for the full list of icons
-      */}
-      <Icons icon="lightning" />
+      <SudoIcon
+        fill="currentColor"
+        style={{ position: "absolute", width: 0, height: 0 }}
+        data-chromatic="ignore"
+      />
     </IconButton>
   );
 };
