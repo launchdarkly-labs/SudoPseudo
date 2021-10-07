@@ -1,2 +1,2 @@
-import { withPseudoTransformer } from "../withPseudoTransformer";
-export const decorators = [withPseudoTransformer];
+import { withPseudoClasses } from "../withPseudoClasses";
+export const decorators = [withPseudoClasses];
