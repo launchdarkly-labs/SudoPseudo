@@ -5,11 +5,11 @@ import {
   StoryFn as StoryFunction,
   StoryContext,
 } from "@storybook/addons";
+
 import {
   insertStylesIntoDOM,
   removeStylesFromDOM,
   replacePseudoSelectors,
-  useHasPseudoClasses,
 } from "./utils";
 import { GLOBAL_PARAM_KEY } from "./constants";
 
@@ -18,9 +18,8 @@ export function withPseudoClasses(
   context: StoryContext
 ) {
   const [globals] = useGlobals();
-  const isSudoPseudoEnabled = globals[GLOBAL_PARAM_KEY];
-  const hasPseudoClasses = useHasPseudoClasses();
 
+  const isSudoPseudoEnabled = globals[GLOBAL_PARAM_KEY];
   const getModifiedStyles = useMemo(() => {
     const stylesSheets = document.styleSheets;
     return replacePseudoSelectors(stylesSheets);
@@ -30,8 +29,7 @@ export function withPseudoClasses(
     if (!isSudoPseudoEnabled) {
       // remove our modified styles from the DOM
       removeStylesFromDOM(context.id);
-    } else if (!hasPseudoClasses) {
-      // if we haven't added our modified yet, add it to the DOM
+    } else {
       const processedStyles = getModifiedStyles;
       insertStylesIntoDOM(processedStyles, context.id);
     }

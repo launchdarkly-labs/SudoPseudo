@@ -65,7 +65,7 @@ export function insertStylesIntoDOM(
   contextId: string
 ) {
   // don't add styles again if already added
-  if (document.getElementById(ADDON_STYLES_SELECTOR)) return;
+  if (hasPseudoClasses()) return;
 
   // Create the marking selector to note we have already added styles
   const markingElement = document.createElement("style");
@@ -94,26 +94,17 @@ export function insertStylesIntoDOM(
 
 export function removeStylesFromDOM(contextId: string) {
   const selectorID = createSelector(contextId);
-  document.getElementById(selectorID)?.remove();
-  document.getElementById(ADDON_STYLES_SELECTOR)?.remove();
+  const doc = document;
+  doc.getElementById(selectorID)?.remove();
+  doc.getElementById(ADDON_STYLES_SELECTOR)?.remove();
 }
 
 // This checks to see if we have already modified the stylesheets
-export function useHasPseudoClasses() {
-  const [hasPseudoClasses, setHasPseudo] = useState<boolean>(false);
-  // each story is isolated from the other
-  useEffect(() => {
-    const isUsingModifiedRules = !!document
-      .getElementsByTagName("style")
-      .namedItem(ADDON_STYLES_SELECTOR);
-
-    if (hasPseudoClasses !== isUsingModifiedRules) {
-      setHasPseudo(isUsingModifiedRules);
-    }
-  }, []);
-
-  return hasPseudoClasses;
-}
+const hasPseudoClasses = (): boolean => {
+  return !!document
+    .getElementsByTagName("style")
+    .namedItem(ADDON_STYLES_SELECTOR);
+};
 
 // Returns an array of css rules that match the pseudo states and
 // have their pseudo selectors replaced with class names

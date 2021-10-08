@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import { useGlobals } from "@storybook/api";
+
 import { IconButton } from "@storybook/components";
 import { TOOL_ID, GLOBAL_PARAM_KEY } from "./constants";
 import { SudoIcon } from "./icons/";
