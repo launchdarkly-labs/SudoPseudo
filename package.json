@@ -1,5 +1,5 @@
 {
-  "name": "sudo-pseudo",
+  "name": "@launchdarkly/sudo-pseudo",
   "version": "0.1.0",
   "description": "everything you need to build a Storybook addon",
   "keywords": [
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jagarnica/SudoPseudo"
+    "url": "https://github.com/launchdarkly/SudoPseudo/"
   },
   "author": "jagarnica",
   "license": "MIT",
@@ -39,7 +39,7 @@
     "start": "concurrently \"yarn build:watch\" \"yarn storybook -- --no-manager-cache --quiet\"",
     "build-storybook": "build-storybook",
     "prerelease": "zx scripts/prepublish-checks.mjs",
-    "release": "yarn build && auto shipit",
+    "release": "yarn build",
     "eject-ts": "zx scripts/eject-typescript.mjs"
   },
   "devDependencies": {
@@ -86,10 +86,10 @@
     }
   },
   "publishConfig": {
-    "access": "public"
+    "access": "private"
   },
   "storybook": {
-    "displayName": "Addon Kit",
+    "displayName": "Sudo Pseudo",
     "supportedFrameworks": [
       "react",
       "vue",
