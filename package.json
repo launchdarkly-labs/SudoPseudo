@@ -1,20 +1,21 @@
 {
   "name": "@launchdarkly/sudo-pseudo",
   "version": "0.1.0",
-  "description": "everything you need to build a Storybook addon",
+  "description": "A storybook addon to test pseudo styles for your stories.",
   "keywords": [
     "css",
     "pseudo states",
     "storybook-addons",
     "style",
-    "test"
+    "test",
+    "chromatic"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/launchdarkly/SudoPseudo/"
   },
   "author": "jagarnica",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/ts/index.d.ts",
@@ -86,7 +87,7 @@
     }
   },
   "publishConfig": {
-    "access": "private"
+    "access": "public"
   },
   "storybook": {
     "displayName": "Sudo Pseudo",
