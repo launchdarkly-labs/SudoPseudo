@@ -1,6 +1,8 @@
 # Sudo Pseudo
 
-This addon allows you to test pseudo classes using class names without having to rewrite your existing stylesheets. Currently it supports: 
+#### A storybook addon to view pseudo classes in your stories
+
+This Storybook addon allows you to test pseudo classes using class names without having to rewrite your existing stylesheets. Currently it supports: 
 - focus-visible
 - focus
 - active
