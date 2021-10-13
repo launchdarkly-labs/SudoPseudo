@@ -1,5 +1,5 @@
 {
-  "name": "@launchdarkly/sudo-pseudo",
+  "name": "sudo-pseudo",
   "version": "0.1.0",
   "description": "A storybook addon to test pseudo styles for your stories.",
   "keywords": [
